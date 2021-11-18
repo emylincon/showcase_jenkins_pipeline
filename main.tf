@@ -71,7 +71,7 @@ resource "aws_security_group" "allow_jenkins" {
 }
 
 resource "aws_instance" "jenkins" {
-  ami           = var.ami_id
+  ami           = var.snapshot_id #var.ami_id
   instance_type = var.instance_type
   subnet_id     = aws_subnet.public.id
   #user_data              = file("jenkins.sh")
